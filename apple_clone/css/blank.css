@@ -1,0 +1,196 @@
+@charset 'utf-8';
+
+html {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+}
+body {
+    overflow-x: hidden;
+    color: rgb(29,29,31);
+    letter-spacing: -0.05em;
+    background: #fff;
+}
+p {
+    line-height: 1.6;
+}
+a {
+    color: rgb(29,29,31);
+    text-decoration: none;
+}
+
+.global_nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    padding: 0 1rem;
+}
+.local_nav {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    padding: 0 1rem;
+    border-bottom: 1px solid #ddd;
+}
+.global_nav_links,
+.local_nav_links {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.global_nav_links {
+    justify-content: space-between;
+}
+.local_nav_links .product_name {
+    margin-right: auto;
+    font-size: 1.2rem;
+}
+.local_nav_links .product_dsc {
+    margin-left: 2em;
+    font-size: 0.8rem;
+}
+
+.show_scene0 .scroll_section.section0 .sticky_elem,
+.show_scene1 .scroll_section.section1 .sticky_elem,
+.show_scene2 .scroll_section.section2 .sticky_elem,
+.show_scene3 .scroll_section.section3 .sticky_elem {
+    display: block;
+}
+
+.main_message {
+    display: flex;
+    justify-content: center;
+    top: 35vh;
+    align-items: center;
+    height: 3em;
+    margin: 5px 0;
+    font-size: 2.5rem;
+    opacity: 0;
+}
+.main_message .txt {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.main_message .sm {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1rem;
+}
+.dsc {
+    max-width: 1000px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #888;
+}
+.dsc_term {
+    float: left;
+    margin-right: 0.2em;
+    font-size: 3rem;
+    color: rgb(29,29,31);
+}
+.dsc_message {
+    width: 50%;
+    font-weight: bold;
+}
+.pin {
+    width: 1px;
+    height: 100px;
+    background: rgb(29,29,31);
+}
+.mid_message {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 2rem;
+    color: #888;
+}
+.mid_message .st {
+    color: rgb(29,29,31);
+}
+.canvas_caption {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #888;
+}
+.sticky_elem {
+    display: none;
+    position: fixed;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.scroll_section {
+    padding-top: 50vh;
+}
+.scroll_section.section0 .section_title {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.scroll_section.section2 .main_message {
+    font-size: 3.5rem;
+}
+.scroll_section.section2 .dsc_message.one {
+    top: 10%;
+    left: 40%;
+}
+.scroll_section.section2 .dsc_message.two {
+    top: 15%;
+    left: 45%;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    background: darkorange;
+    color: #fff;
+}
+
+@media (min-width: 1024px) {
+    .scroll_section.section0 .section_title {
+        font-size: 9vw;
+    }
+    .main_message {
+        font-size: 4vw;
+    }
+    .dsc {
+        margin: 0 auto;
+        font-size: 2rem;
+    }
+    .dsc_term {
+        font-size: 6rem;
+    }
+    .main_message .sm {
+        font-size: 1.5vw;
+    }
+    .dsc_message {
+        width: 20%;
+    }
+    .mid_message {
+        font-size: 4vw;
+    }
+    .canvas_caption {
+        font-size: 2rem;
+    }
+    .scroll_section.section2 .main_message {
+        font-size: 6vw;
+    }
+    .scroll_section.section2 .dsc_message.one {
+        top: 20%;
+        left: 53%;
+    }
+    .scroll_section.section2 .dsc_message.two {
+        left: 55%;
+    }
+}
