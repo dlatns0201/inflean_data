@@ -9,92 +9,100 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <ul class="lst_menu">
-    <li class="lst"><a href="#" class="lnk">Home</a></li>
-    <li class="lst"><a href="#" class="lnk">About</a></li>
-    <li class="lst"><a href="#" class="lnk">Product</a></li>
-    <li class="lst"><a href="#" class="lnk">Contact</a></li>
-  </ul>
+  <input type="checkbox" id="modal_switch" class="blind modal_switch">
+  <label for="modal_switch" class="modal_label"><span class="blind">modal 열고 닫기</span></label>
+  <div class="page">
+    <header class="header">
+      <h1 class="tit">1분코딩</h1>
+      <form class="search_form">
+        <input type="search" class="search_input">
+        <input type="submit" class="search_btn" value="찾기">
+      </form>
+    </header>
+    <ul class="lst_menu">
+      <li class="lst"><a href="#" class="lnk">Home</a></li>
+      <li class="lst"><a href="#" class="lnk">About</a></li>
+      <li class="lst"><a href="#" class="lnk">Product</a></li>
+      <li class="lst"><a href="#" class="lnk">Contact</a></li>
+    </ul>
+    <section class="primary">
+      <ul class="lst_card">
+        <li class="lst">
+          <figure class="card_img"><img src="img/ilbuni.png" alt="일분이" class="img"></figure>
+          <div class="card_dsc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
+          </div>
+        </li>
+        <li class="lst">
+          <figure class="card_img"><img src="img/ilbuni.png" alt="일분이" class="img"></figure>
+          <div class="card_dsc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
+          </div>
+        </li>
+        <li class="lst">
+          <figure class="card_img"><img src="img/ilbuni.png" alt="일분이" class="img"></figure>
+          <div class="card_dsc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
+          </div>
+        </li>
+      </ul>
+    </section>
 
-  <form class="search_form">
-    <input type="search" class="search_input">
-    <input type="submit" class="search_btn" value="찾기">
-  </form>
-
-  <ul class="lst_info">
-    <li class="lst">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus molestiae beatae optio quasi voluptates rerum quod repellat animi repellendus voluptas libero, quibusdam ipsum adipisci sapiente sint perferendis, error obcaecati architecto?</li>
-    <li class="lst">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti amet provident voluptatibus sint cupiditate blanditiis debitis alias quidem quasi aperiam consequatur minima veniam aliquid quibusdam cum, magnam, voluptatem, optio officiis?</li>
-    <li class="lst">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia error, nesciunt, eos libero ab saepe, tempore quia et eaque ducimus incidunt assumenda dolorum enim nisi voluptatum velit deleniti! Ipsam, hic.</li>
-  </ul>
-
-  <ul class="lst_msg lst_user">
-    <li class="lst">
-      <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
-      <p class="msg_content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi culpa reprehenderit, tenetur voluptate eveniet vitae excepturi alias corporis optio, delectus sint quisquam dolorum quo aliquam molestiae maxime ad modi?
-      </p>
-    </li>
-    <li class="lst">
-      <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
-      <p class="msg_content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi culpa reprehenderit, tenetur voluptate eveniet vitae excepturi alias corporis optio, delectus sint quisquam dolorum quo aliquam molestiae maxime ad modi?
-      </p>
-    </li>
-    <li class="lst">
-      <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
-      <p class="msg_content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi culpa reprehenderit, tenetur voluptate eveniet vitae excepturi alias corporis optio, delectus sint quisquam dolorum quo aliquam molestiae maxime ad modi?
-      </p>
-    </li>
-  </ul>
-
-  <ul class="lst_friend lst_user">
-    <li class="lst">
-      <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
-      <p class="user_name">
-        일부니 일분이 일부니
-      </p>
-    </li>
-    <li class="lst">
-      <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
-      <p class="user_name">
-        일부니 일분이 일부니
-      </p>
-    </li>
-    <li class="lst">
-      <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
-      <p class="user_name">
-        일부니 일분이 일부니
-      </p>
-    </li>
-  </ul>
-
-  <div class="modal" style="display: none;">
+    <aside class="secondary left">
+      <ul class="lst_info">
+        <li class="lst">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus molestiae beatae optio quasi voluptates rerum quod repellat animi repellendus voluptas libero, quibusdam ipsum adipisci sapiente sint perferendis, error obcaecati architecto?</li>
+        <li class="lst">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti amet provident voluptatibus sint cupiditate blanditiis debitis alias quidem quasi aperiam consequatur minima veniam aliquid quibusdam cum, magnam, voluptatem, optio officiis?</li>
+        <li class="lst">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia error, nesciunt, eos libero ab saepe, tempore quia et eaque ducimus incidunt assumenda dolorum enim nisi voluptatum velit deleniti! Ipsam, hic.</li>
+      </ul>
+      <ul class="lst_friend lst_user">
+        <li class="lst">
+          <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
+          <p class="user_name">
+            일부니 일분이 일부니
+          </p>
+        </li>
+        <li class="lst">
+          <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
+          <p class="user_name">
+            일부니 일분이 일부니
+          </p>
+        </li>
+        <li class="lst">
+          <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
+          <p class="user_name">
+            일부니 일분이 일부니
+          </p>
+        </li>
+      </ul>
+    </aside>
+    <aside class="secondary right">
+      <ul class="lst_msg lst_user">
+        <li class="lst">
+          <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
+          <p class="msg_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi culpa reprehenderit, tenetur voluptate eveniet vitae excepturi alias corporis optio, delectus sint quisquam dolorum quo aliquam molestiae maxime ad modi?
+          </p>
+        </li>
+        <li class="lst">
+          <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
+          <p class="msg_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi culpa reprehenderit, tenetur voluptate eveniet vitae excepturi alias corporis optio, delectus sint quisquam dolorum quo aliquam molestiae maxime ad modi?
+          </p>
+        </li>
+        <li class="lst">
+          <figure class="user_photo" style="background-image: url(img/ilbuni.png);"></figure>
+          <p class="msg_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi culpa reprehenderit, tenetur voluptate eveniet vitae excepturi alias corporis optio, delectus sint quisquam dolorum quo aliquam molestiae maxime ad modi?
+          </p>
+        </li>
+      </ul>
+    </aside>
+  </div>
+  <div class="modal">
     <div class="dialog">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis itaque possimus accusantium sequi temporibus dicta blanditiis, iste laborum voluptatum soluta voluptates aut obcaecati alias sint maiores, fuga culpa architecto reiciendis.
     </div>
   </div>
-
-  <ul class="lst_card">
-    <li class="lst">
-      <figure class="card_img"><img src="img/ilbuni.png" alt="일분이" class="img"></figure>
-      <div class="card_dsc">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
-      </div>
-    </li>
-    <li class="lst">
-      <figure class="card_img"><img src="img/ilbuni.png" alt="일분이" class="img"></figure>
-      <div class="card_dsc">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
-      </div>
-    </li>
-    <li class="lst">
-      <figure class="card_img"><img src="img/ilbuni.png" alt="일분이" class="img"></figure>
-      <div class="card_dsc">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorem nesciunt libero ad tenetur quod ipsum magnam optio nostrum adipisci nam sapiente est sunt dicta sed, reiciendis voluptas aspernatur. Ipsum.
-      </div>
-    </li>
-  </ul>
 </body>
 </html>

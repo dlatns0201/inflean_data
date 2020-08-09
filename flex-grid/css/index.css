@@ -1,3 +1,43 @@
+body {
+  overflow-x: hidden;
+}
+
+.blind {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0,0,0,0);
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 1rem;
+}
+.header .search_form {
+  display: flex;
+  width: 300px;
+  max-width: 60%;
+  height: 40px;
+  margin: 0 3rem 0 auto;
+}
+.header .search_input {
+  flex: 1;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 0.3em;
+  font-size: 1rem;
+}
+.header .search_btn {
+  width: 4em;
+  border: 0;
+  border-radius: 0.3em;
+  font-size: 1rem;
+  background: gold;
+}
+
 .lst_menu {
   display: flex;
 }
@@ -22,45 +62,55 @@
 .lst_menu .lnk:hover {
   color: #fff;
 }
-
-.search_form {
+.primary .lst_card .lst {
   display: flex;
-  height: 40px;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
-.search_input {
-  flex: 1;
-  margin-right: 10px;
-  border: 0;
-  border-radius: 0.3em;
-  font-size: 1rem;
+.primary {
+  padding: 1rem;
 }
-.search_btn {
-  width: 4em;
-  border: 0;
-  border-radius: 0.3em;
-  font-size: 1rem;
-  background: gold;
+.primary .lst_card .card_img {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 60%;
+  background-color: lightgray;
+}
+.primary .lst_card .card_img .img {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.primary .lst_card .card_dsc {
+  flex: auto;
+  padding: 1em;
+  background: #fff;
 }
 
-
-.lst_info {
-
+.secondary.left {
+  background: #fff;
 }
-.lst_info .lst {
+.secondary.left  .lst_info .lst {
   overflow: hidden;
   display: flex;
   margin: 0.5em 0;
 }
-.lst_info .lst::before {
+.secondary.left .lst_info .lst::before {
   content: '✅';
   margin-right: 0.5em;
 }
 
-.lst_user .lst {
+.secondary.left .lst_user .lst {
   display: flex;
   margin-bottom: 1.5em;
 }
-.lst_user .user_photo {
+.secondary.left .lst_user .user_photo {
   flex-shrink: 0;
   width: 50px;
   height: 50px;
@@ -71,83 +121,116 @@
   background-size: 150%;
 }
 
-
-.lst_friend .lst {
+.secondary.right {
+  background: #666;
+  color: #fff;
+}
+.secondary.right .lst_friend .lst {
   align-items: center;
 }
-.user_name {
+.secondary.right .user_name {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.modal {
+.modal_switch {
+  font-size: 2rem;
+}
+.modal_switch:checked ~ .modal {
+  display: flex;
+}
+.modal_switch:checked ~ .modal_label:before {
+  color: dodgerblue;
+}
+.modal_label {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+}
+.modal_label:before {
+  z-index: 10;
+  content: '☞';
+  font-size: 2rem;
+}
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
+  right: 0;
   bottom: 0;
+  left: 0;
   background: rgba(0,0,0,0.3);
 }
-
 .modal .dialog {
   width: 50vw;
   padding: 2em;
   border-radius: 1em;
   background: #fff;
 }
-
-.lst_card {
-
-}
-.lst_card .lst {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-.lst_card .card_img {
-  position: relative;
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 60%;
-  background-color: lightgray;
-}
-.lst_card .card_img .img {
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-.lst_card .card_dsc {
-  flex: auto;
-  padding: 1em;
-  background: #fff;
+.footer {
+  padding: 1rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-  .lst_card {
+  .primary .lst_card {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -1rem;
   }
-  .lst_card .lst {
+  .primary .lst_card .lst {
     width: 50%;
     padding: 0 1rem;
   }
 }
-
+@media (min-width: 1024px) {
+  .page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header {
+    width: 100%;
+  }
+  .lst_menu {
+    width: 100%;
+  }
+  .secondary {
+    width: 20%;
+  }
+  .secondary.left {
+    order: 1;
+  }
+  .secondary.right {
+    order: 3;
+  }
+  .primary {
+    width: 60%;
+    order: 2;
+  }
+  .footer {
+    order: 4;
+    width: 100%;
+  }
+}
 @media (min-width: 1110px) {
-  .lst_card .lst {
+  .primary .lst_card .lst {
     width: 33.33%;
+  }
+}
+@media (min-width: 1400px) {
+  .primary {
+    width: calc(100% - 600px);
+    flex: auto;
+  }
+  .secondary {
+    width: 300px;
   }
 }
