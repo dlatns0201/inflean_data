@@ -59,3 +59,50 @@ flex-grow는 ie에서 transition이 적용되지 않기 때문에 이같은 경�
 - PC는 960px or 1024px 기준
 - 하지만 고정적인 너비를 기준으로 하지 않고 브라우저 크기를 줄였을 때 문제가 되는 해상도 크기를 기준으로 고려해야 한다.
 - 화면이 커질수록 가변적인 콘텐츠들이 비대하게 커지는 문제가 발생할 수 있기 때문에 max-width 사용을 고려해야 한다.
+
+## Grid
+### 용어
+1. Grid Container: `display: grid`를 선언하는 요소, 해당 요소 안의 자식들이 Grid 규칙의 영향을 받아 정렬된다.
+2. Grid Item: Grid Container의 자식 요소들
+3. Grid Track: Grid의 Row나 Column
+4. Grid Cell: Grid Item과 다르게 Grid Line들로 구성된 하나의 정사각형 칸(Grid Item을 감싸고 있음)
+5. Grid Line: Grid Cell을 구분하는 선
+6. Grid Number: Grid Line의 각 번호
+7. Grid Gap: Grid Cell 간의 간격
+8. Grid Area: Grid 라인으로 둘러싼 사각형 영역, Grid Cell의 집합
+
+- Container 속성-
+grid-template-columns
+grid-template-rows
+repeat
+minmax: (최소, 최대) 길이를 설정한다.
+auto-fill: 개수만큼 알아서 채워준다. 개수가 모자라면 빈공간이 생긴다.
+auto-fit: 개수가 모자라도 빈공간 없이 알아서 채워준다.
+
+gap, row-gap, column-gap으로 사용하지만 옛날 브라우저(IE x) 지원을 위해 grid-gap을 위에 선언해놓을 수 있다.
+
+grid-auto-columns
+grid-auto-rows
+위 두 석승은 grid-template-xxx 와 같이 사용될 수 있다.
+grid-template-areas로 grid cell마다 이름을 주어줄 수 있다.
+grid-auto-flow: Item이 자동 배치되는 흐름을 결정하는 속성 (row, column, dense, row-dense, column-dense)
+
+align-items: Item을 Cell 안에서 Column(세로축) 방향으로 정렬한다.
+justify-items: Item을 Cell 안에서 Row(가로축) 방향으로 정렬한다.
+place-items로 align-items와 justify-items를 축약할 수 있다. 하나만 입력하면 두 속성에 똑같이 적용된다.
+align-content, justify-content: align-items는 cell 안에서의 item들을 각각 정렬하였다면, 이 속성은 Cell들을 정렬한다.
+place-content: align-content와 justify-content를 축약할 수 있다.
+
+
+- Item 속성 -
+grid-column(grid-column-start, grid-column-end)
+grid-row(grid-row-start, grid-row-end)
+grid-column과 grid-row는 끝 번호(end)가 몇 번째가 아닌 감싸고 있는 Grid Line의 번호가 와야 한다.
+grid-row: 3 / 5; => 3-4, 4-5의 Line으로 둘러싼 영역 두개를 가리킨다.
+grid-row: 3 / span 2; => 위와 똑같은 결과가 나온다.
+이 속성들로 위치가 잡혀있으면 다른 것을 밀지 않고 남의 영역에 침범해 같은 영역에 위치할 수 있다.
+grid-area는 item들에다 미리 정의한 grid-template-areas의 이름들을 요소에 지정해줄 수 있다.
+
+align-self: container의 규칙을 무시하고 item에 column 방향(y축)의 정렬을 정할 수 있다.
+justify-self: container의 규칙을 무시하고 item에 row 방향(x축)의 정렬을 정할 수 있다.
+place-self: align-self와 justify-self을 축약할 수 있다.
