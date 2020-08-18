@@ -106,3 +106,18 @@ grid-area는 item들에다 미리 정의한 grid-template-areas의 이름들을 
 align-self: container의 규칙을 무시하고 item에 column 방향(y축)의 정렬을 정할 수 있다.
 justify-self: container의 규칙을 무시하고 item에 row 방향(x축)의 정렬을 정할 수 있다.
 place-self: align-self와 justify-self을 축약할 수 있다.
+
+IE 지원
+`display: -ms-grid` <=> display: grid
+`-ms-grid-rows`: 20% 1fr 20% <=> grid-template-rows: 20% 1fr 20%
+`-ms-grid-columns: 20% 1fr 20%` <=> grid-template-columns: 20% 1fr 20%
+`-ms-grid-row: 1` <=> grid-row-start(end가 없음)
+`-ms-grid-row-span: 2` <=> (grid-row: 1 /) span 2
+`-ms-grid-column: 1` <=> grid-column-start(end가 없음)
+`-ms-grid-column-span: 2` <=> (grid-column: 1/) span 2
+`-ms-grid-row-align: center` <=> align-self: center
+`-ms-grid-column-align: center` <=> justify-self: center
+gap은 동작하지 않아 margin을 Item들마다 설정해줘야 한다.
+grid-template-areas 또한 동작하지 않는다.
+repeat, minmax같은 함수가 동작하지 않는다. repeat 대신 `-ms-grid-columns: (1fr)[3]` 같이 입력하면 동작한다.
+-ms-grid-columns 수치를 입력해도 자동으로 배치가 되지 않아 Item들에 따로 -ms-grid-column을 설정해야 한다.
