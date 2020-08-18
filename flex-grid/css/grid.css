@@ -1,0 +1,233 @@
+body {
+    overflow-x: hidden;
+  }
+  
+  .blind {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 1rem;
+  }
+  .header .search_form {
+    display: flex;
+    width: 300px;
+    max-width: 60%;
+    height: 40px;
+    margin: 0 3rem 0 auto;
+  }
+  .header .search_input {
+    flex: 1;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+  }
+  .header .search_btn {
+    width: 4em;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+    background: gold;
+  }
+  
+  .lst_menu {
+    display: flex;
+  }
+  .lst_menu .lst {
+    width: 25%;
+    background: gold;
+    transition: 0.5s;
+  }
+  .lst_menu .lst:hover {
+    width: 35%;
+    background: crimson;
+  }
+  .lst_menu .lnk {
+    display: block;
+    padding: 1em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    text-align: center;
+  }
+  .lst_menu .lnk:hover {
+    color: #fff;
+  }
+  .primary .lst_card .lst {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .primary {
+    padding: 1rem;
+  }
+  .primary .lst_card .card_img {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 60%;
+    background-color: lightgray;
+  }
+  .primary .lst_card .card_img .img {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  .primary .lst_card .card_dsc {
+    flex: auto;
+    padding: 1em;
+    background: #fff;
+  }
+  
+  .secondary.left {
+    background: #fff;
+  }
+  .secondary.left  .lst_info .lst {
+    overflow: hidden;
+    display: flex;
+    margin: 0.5em 0;
+  }
+  .secondary.left .lst_info .lst::before {
+    content: '✅';
+    margin-right: 0.5em;
+  }
+  
+  .secondary.left .lst_user .lst {
+    display: flex;
+    margin-bottom: 1.5em;
+  }
+  .secondary.left .lst_user .user_photo {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background: gold no-repeat center;
+    background-size: 150%;
+  }
+  
+  .secondary.right {
+    background: #666;
+    color: #fff;
+  }
+  .secondary.right .lst_friend .lst {
+    align-items: center;
+  }
+  .secondary.right .user_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .modal_switch {
+    font-size: 2rem;
+  }
+  .modal_switch:checked ~ .modal {
+    display: flex;
+  }
+  .modal_switch:checked ~ .modal_label:before {
+    color: dodgerblue;
+  }
+  .modal_label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  .modal_label:before {
+    z-index: 10;
+    content: '☞';
+    font-size: 2rem;
+  }
+  .modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+  }
+  .modal .dialog {
+    width: 50vw;
+    padding: 2em;
+    border-radius: 1em;
+    background: #fff;
+  }
+  .footer {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .primary .lst_card {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1rem;
+    }
+    .primary .lst_card .lst {
+      width: 50%;
+      padding: 0 1rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .page {
+        display: grid;
+        grid-template-columns: 20% 1fr 20%;
+    }
+    .header {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+    .lst_menu {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+    .primary {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    .secondary.left {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .secondary.right {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+    .footer {
+        grid-column: 1 / 4;
+        grid-row: 4 / 5;
+    }
+  }
+  @media (min-width: 1110px) {
+    .primary .lst_card .lst {
+      width: 33.33%;
+    }
+  }
+  @media (min-width: 1400px) {
+    .page {
+        grid-template-columns: 300px 1fr 300px;
+    }
+  }
